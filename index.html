@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en-UK">
+<head>
+	<title>Cordial</title>
+	<meta charset="utf-8">
+	<link href=
+	"https://fonts.googleapis.com/css?family=Abril+Fatface|Lato|Lobster|Oswald"
+	rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/jscolor.min.js">
+	</script>
+	<script src="js/main.js">
+	</script>
+	<script src=
+	"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
+</head>
+
+<body onload="modalInit();">
+	<div class="header">
+		<div class="legal">
+			Copyright &copy; 2016 j4cobgarby All Rights Reserved.
+		</div>
+
+
+		<h1 class="header">Cordial</h1>
+
+
+		<form>
+			<input class="top" id="topic" placeholder="Topic">
+			<input class="top msg" id="msg" placeholder="Message">
+			<button class="jscolor {value:'fceeff', position:'right'}" id=
+			"picker"></button> &nbsp; <button onclick="cardFromInput()" type=
+			"button">Post!</button>
+		</form>
+	</div>
+
+
+	<div class="cards">
+	</div>
+
+
+	<div class="modal" id="toolongModal">
+		<div class="modal-content">
+			<p id="modalp">That's <b>too many characters!</b> The maximum is
+			<b>400</b></p>
+		</div>
+	</div>
+</body>
+</html>
