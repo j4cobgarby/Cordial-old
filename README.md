@@ -14,4 +14,4 @@ http://j4cobgarby.github.io/Cordial
   - Images support.
 <hr>
 *Anything else you want, tell me!*<br>
-*If you think you can help with the app, do!*
+***If you think you can help with the app, do!***
