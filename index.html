@@ -17,7 +17,7 @@
 	</script>
 </head>
 
-<body onload="modalInit();testCards();">
+<body onload="modalInit();">
 	<div class="header">
 		<div class="legal">
 			Copyright &copy; 2016 j4cobgarby
@@ -26,34 +26,34 @@
 
 		<h1 class="header">Cordial</h1>
 
-
-		<form>
-			<input class="top" id="topic" placeholder="Topic">
-			<input class="top msg" id="msg" placeholder="Message">
-			<button class="jscolor {value:'fceeff', position:'right'}" id=
-			"picker"></button>
-			<select>
-			    <optgroup label="Category">
-			    <option value="memes">Memes</option>
-				<option value="animals">Animals</option>
-				<option value="funny">Funny</option>
-				<option value="interesting">Interesting</option>
-				<option value="sad">Sad</option>
-				<option value="programming">Programming</option>
-				<option value="cordial">Cordial</option>
-				<option value="tech">Tech</option>
-				<option value="other">Other</option>
-				</optgroup>
-			</select>
-			&nbsp;
-			<button onclick="cardFromInput()" type=
-			"button">Post!</button>
-		</form>
+		<div class="inputs">
+			<form>
+				<input class="top" id="topic" placeholder="Topic">
+				<input class="top msg" id="msg" placeholder="Message">
+				<button class="jscolor {value:'fceeff', position:'right'}" id=
+				"picker"></button>
+				<select>
+				    <optgroup label="Category">
+				    <option value="memes">Memes</option>
+					<option value="animals">Animals</option>
+					<option value="funny">Funny</option>
+					<option value="interesting">Interesting</option>
+					<option value="sad">Sad</option>
+					<option value="programming">Programming</option>
+					<option value="cordial">Cordial</option>
+					<option value="tech">Tech</option>
+					<option value="other">Other</option>
+					</optgroup>
+				</select>
+				&nbsp;
+				<button onclick="cardFromInput()" type=
+				"button">Post!</button>
+			</form>
+		</div>
 	</div>
 
 
-	<div class="cards">
-	</div>
+	<div class="cards"/>
 
 
 	<div class="modal" id="toolongModal">
@@ -61,14 +61,6 @@
 			<p id="modalp">That's <b>too many characters!</b> The maximum is
 			<b>400</b></p>
 		</div>
-	</div>
-	<div class="footer">
-		<p class="footer">
-			Copyright &copy; j4cobgarby | This project is open source, at
-			<b><a href="https://github.com/j4cobgarby/Cordial">
-				github / j4cobgarby / Cordial
-			</a></b>
-		</p>
 	</div>
 </body>
 </html>
