@@ -1,6 +1,6 @@
 // out: styles.css, sourcemap: true, compress: true
 
-// Colours
+// UI Colours:
 @maincolour:   #b984c6; // This will change more than this colour
 @darker:       darken(@maincolour, 11%);
 @lighter:      lighten(@maincolour, 29%);
@@ -11,6 +11,20 @@
 @lgrey:        #ededed;
 @mgrey:        #d0d0d0;
 @dgrey:        #777;
+
+@rad:          6px;
+@cardrad:      8px;
+
+// Theme colours:
+@memes:       #ed856c;
+@animals:     #83816c;
+@funny:       #f1e292;
+@interesting: #96e08a;
+@sad:         #87cbd0;
+@programming: #50656b;
+@cordial:     @maincolour;
+@tech:        #c66481;
+@other:       #e4e3e9;
 
 @bodyfont: Lato;
 @headfont: Oswald;
@@ -62,7 +76,7 @@ button
 
     color: @maincolour;
     border-style: none;
-    border-radius: 5px;
+    border-radius: @rad;
     background-color: white;
 }
 
@@ -85,11 +99,28 @@ div.legal
     font-family: @bodyfont;
     font-size: 12px;
 
-    position: fixed;
-    top: 1em;
-    right: 1em;
+    float: right;
+
+    margin-top: 5px;
+    margin-right: 55px;
 
     color: @darker;
+}
+
+select
+{
+    font-size: 16px;
+
+    width: 160px;
+    height: 40px;
+    margin-right: 6px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+
+    transition-duration: .4s;
+
+    border-style: none;
+    border-radius: @rad;
 }
 
 input.top
@@ -105,7 +136,7 @@ input.top
     transition-duration: .4s;
 
     border-style: none;
-    border-radius: 5px;
+    border-radius: @rad;
 }
 
 input.top:focus
@@ -189,37 +220,70 @@ div.card
     margin: 10px;
 
     border: 1px solid @mgrey;
-    border-radius: 8px;
-    background-color: #fff;
+    border-radius: @cardrad;
+    border-bottom-left-radius: 2;
+    border-bottom-right-radius: 2;
+    background-color: white;
+}
+
+div.footer {
+    float:left;
+    clear: left;
+
+    background-color: @maincolour;
+    width: 100%;
+    color: @lighter;
+
+    margin-top: 7px;
+
+    box-shadow: 0 -6px 0 0 @darker;
+}
+
+a {
+    color: @buttonactive;
+    text-decoration: none;
+}
+
+p.footer {
+    text-align: center;
+    font-size: 12px;
 }
 
 // Modal variables
 @errorcolour: #a34a4a;
-@amountdarken: 0.1;
+@amountdarken: .1;
 @modalbackground: #fef2f2;
 @modalborderrad: 6px;
 
-#modalp {
+#modalp
+{
     color: @errorcolour;
 }
 
-.modal {
-    display: none;
+.modal
+{
     position: fixed;
     z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
+
+    display: none;
+    overflow: auto;
+
     width: 100%;
     height: 100%;
-    overflow: auto;
+
     background-color: rgba(0,0,0,@amountdarken);
 }
 
-.modal-content {
-    text-align: center;
-    background-color: @modalbackground;
+.modal-content
+{
+    width: 40%;
     margin: 15% auto;
     padding: 20px;
+
+    text-align: center;
+
     border-radius: @modalborderrad;
-    width: 40%;
+    background-color: @modalbackground;
 }

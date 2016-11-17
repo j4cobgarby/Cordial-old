@@ -10,17 +10,17 @@
 	<link href="css/styles.css" rel="stylesheet">
 	<script src="js/jscolor.min.js">
 	</script>
-	<script src="js/main.js">
-	</script>
 	<script src=
 	"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 	</script>
+	<script src="js/main.js">
+	</script>
 </head>
 
-<body onload="modalInit();">
+<body onload="modalInit();testCards();">
 	<div class="header">
 		<div class="legal">
-			Copyright &copy; 2016 j4cobgarby All Rights Reserved.
+			Copyright &copy; 2016 j4cobgarby
 		</div>
 
 
@@ -32,6 +32,19 @@
 			<input class="top msg" id="msg" placeholder="Message">
 			<button class="jscolor {value:'fceeff', position:'right'}" id=
 			"picker"></button>
+			<select>
+			    <optgroup label="Category">
+			    <option value="memes">Memes</option>
+				<option value="animals">Animals</option>
+				<option value="funny">Funny</option>
+				<option value="interesting">Interesting</option>
+				<option value="sad">Sad</option>
+				<option value="programming">Programming</option>
+				<option value="cordial">Cordial</option>
+				<option value="tech">Tech</option>
+				<option value="other">Other</option>
+				</optgroup>
+			</select>
 			&nbsp;
 			<button onclick="cardFromInput()" type=
 			"button">Post!</button>
@@ -48,6 +61,14 @@
 			<p id="modalp">That's <b>too many characters!</b> The maximum is
 			<b>400</b></p>
 		</div>
+	</div>
+	<div class="footer">
+		<p class="footer">
+			Copyright &copy; j4cobgarby | This project is open source, at
+			<b><a href="https://github.com/j4cobgarby/Cordial">
+				github / j4cobgarby / Cordial
+			</a></b>
+		</p>
 	</div>
 </body>
 </html>
