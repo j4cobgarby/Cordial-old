@@ -16,9 +16,16 @@ var cordial =     "#b984c6";
 var tech =        "#c66481";
 var other =       "#e4e3e9";
 
-var categories = [ // Compile all category colours into an array
-	memes, funny, animals, interesting, sad, programming, cordial, tech, other
-];
+var ccols = {}; // category colours
+ccols.memes = memes;
+ccols.animals = animals;
+ccols.funny = funny;
+ccols.interesting = interesting;
+ccols.sad = sad;
+ccols.programming = programming;
+ccols.cordial = cordial;
+ccols.tech = tech;
+ccols.other = other;
 
 function modalInit() {
 	modal = document.getElementById( 'toolongModal' );
@@ -78,20 +85,14 @@ function tooDark( c ) {
 	return false;
 }
 
-function testCards() {
-	for (var i = 0; i < categories.length; i++) {
-		addCard("Lorem", "Lorem Ipsum dolor sit amet.", categories[i],
-		tooDark(categories[i]));
-	}
-}
-
 function cardFromInput() {
 	var title = document.getElementById( 'topic' ).value;
 	var message = document.getElementById( 'msg' ).value;
-	var colour = document.getElementById( 'picker' ).innerHTML;
+	var category = document.getElementById('cat-select').value;
+	var colour = ccols[category];
 
 	if ( message.length <= maxLength ) {
-		addCard( title, message, "#" + colour, tooDark( "#" + colour ) );
+		addCard( title, message, colour, tooDark( colour ) );
 		document.getElementById( 'topic' ).value = "";
 		document.getElementById( 'msg' ).value = "";
 	} else {
