@@ -96,7 +96,6 @@ function cardFromInput() {
 		document.getElementById( 'topic' ).value = "";
 		document.getElementById( 'msg' ).value = "";
 	} else {
-		alert("doing");
 		modal.style.display = "block";
 	}
 }
