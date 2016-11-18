@@ -8,7 +8,7 @@ http://j4cobgarby.github.io/Cordial
   - Support for image uploading.
   - Mobile support.
   - User accounts
-  - Instead of choosing colour, choose topic - colour will be based on this.
+  - ~~Instead of choosing colour, choose topic - colour will be based on this.~~
 
 ## My priorities:
   - The database.
