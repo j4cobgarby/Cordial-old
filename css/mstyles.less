@@ -14,8 +14,11 @@
 @mgrey:        #d0d0d0;
 @dgrey:        #777;
 
-@rad:          6px;
-@cardrad:      8px;
+@rad:          10px;
+@cardrad:      20px;
+
+@inheight:     90px;
+@infontsize:   30px;
 
 // Theme colours:
 @memes:       #ed856c;
@@ -64,13 +67,23 @@ button
     outline: none;
 }
 
+object.logo {
+    display: block;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    height: 300px;
+}
+
 button
 {
-    font-size: 16px;
+    font-size: @infontsize;
 
     float: inherit;
 
-    height: 40px;
+    height: @inheight;
+    width: 130px;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-right: 10px;
@@ -111,10 +124,10 @@ div.legal
 
 select
 {
-    font-size: 16px;
+    font-size: @infontsize;
 
     width: 160px;
-    height: 40px;
+    height: @inheight;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-left: 10px;
@@ -127,10 +140,10 @@ select
 
 input.top
 {
-    font-size: 16px;
+    font-size: @infontsize;
 
-    width: 85px;
-    height: 40px;
+    width: 300px;
+    height: @inheight;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-left: 10px;
@@ -177,8 +190,9 @@ h5.card,
 h6.card
 {
     font-family: @headfont;
+    font-size: 70px;
 
-    height: 60px;
+    height: 120px;
     margin-top: 0;
     margin-bottom: 5px;
     padding-top: 10px;
@@ -217,14 +231,19 @@ p.card
     color: @dgrey;
 }
 
+div.cards {
+    width: 100%;
+}
+
 div.card
 {
     float: left;
     overflow: auto;
+    display: inline-block;
 
-    width: 290px;
-    height: 340px;
-    margin: 10px;
+    width: 100%;
+    height: 1200px;
+    margin: auto;
 
     border: 1px solid @mgrey;
     border-radius: @cardrad;
