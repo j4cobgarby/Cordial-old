@@ -1,4 +1,4 @@
-// out: mstyles.css, sourcemap: true, compress: true
+// out: mstyles.css, sourcemap: true, compress: false
 
 // out: styles.css, sourcemap: true, compress: true
 
@@ -34,11 +34,18 @@
 @bodyfont: Lato;
 @headfont: Oswald;
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body
 {
     overflow-x: hidden;
 
     margin: 0;
+    padding: 0;
+    width: 100%;
 
     background-color: @bodybg;
 }
@@ -154,16 +161,6 @@ input.top
     border-radius: @rad;
 }
 
-input.top:focus
-{
-    width: 150px;
-}
-
-input.msg:focus
-{
-    width: 200px;
-}
-
 div.header
 {
     width: 100%;
@@ -218,12 +215,13 @@ hr
 p.card
 {
     font-family: @bodyfont;
+    font-size: 40px;
 
     overflow: auto;
 
-    padding-right: 12px;
-    padding-bottom: 10px;
-    padding-left: 12px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    padding-left: 40px;
 
     text-align: left;
     word-wrap: break-word;
@@ -232,23 +230,27 @@ p.card
 }
 
 div.cards {
+    text-align: center;
     width: 100%;
+    margin: 0;
 }
 
 div.card
 {
-    float: left;
+    float: none;
     overflow: auto;
     display: inline-block;
 
-    width: 100%;
+    width: 90%;
     height: 1200px;
+    left: 0;
+    right: 0;
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-    border: 1px solid @mgrey;
     border-radius: @cardrad;
-    border-bottom-left-radius: 2;
-    border-bottom-right-radius: 2;
+    border: 1px solid @mgrey;
     background-color: white;
 }
 
@@ -266,11 +268,12 @@ p.footer {
 @errorcolour: #a34a4a;
 @amountdarken: .1;
 @modalbackground: #fef2f2;
-@modalborderrad: 6px;
+@modalborderrad: 20px;
 
 #modalp
 {
     color: @errorcolour;
+    font-size: 40px;
 }
 
 .modal
@@ -291,7 +294,7 @@ p.footer {
 
 .modal-content
 {
-    width: 40%;
+    width: 70%;
     margin: 15% auto;
     padding: 20px;
 
