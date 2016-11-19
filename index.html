@@ -44,19 +44,12 @@
 			<form>
 				<input class="top" id="topic" placeholder="Topic">
 				<input class="top msg" id="msg" placeholder="Message">
-				<select id="cat-select">
-				    <optgroup label="Category">
-				    <option value="memes">Memes</option>
-					<option value="animals">Animals</option>
-					<option value="funny">Funny</option>
-					<option value="interesting">Interesting</option>
-					<option value="sad">Sad</option>
-					<option value="programming">Programming</option>
-					<option value="cordial">Cordial</option>
-					<option value="tech">Tech</option>
-					<option value="other">Other</option>
-					</optgroup>
-				</select>
+				<div class="dropdown">
+				<button onclick="showDropdown();" class="dropbtn">Category</button>
+					<div class="dropdown-content" id="category-dropdown">
+						
+					</div>
+				</div>
 				&nbsp;
 				<button onclick="cardFromInput()" type=
 				"button">Post!</button>
