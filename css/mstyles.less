@@ -1,6 +1,4 @@
-// out: mstyles.css, sourcemap: true, compress: false
-
-// out: styles.css, sourcemap: true, compress: true
+// out: mstyles.css, sourcemap: true, compress: true
 
 // UI Colours:
 @maincolour:   #b984c6; // This will change more than this colour
@@ -46,6 +44,7 @@ body
     margin: 0;
     padding: 0;
     width: 100%;
+    min-width: 100%;
 
     background-color: @bodybg;
 }
@@ -79,7 +78,7 @@ object.logo {
 
     margin: 0 auto;
     margin-top: 30px;
-    margin-bottom: 0px;
+    margin-bottom: -60px;
     height: 300px;
 }
 
@@ -87,11 +86,11 @@ button
 {
     font-size: @infontsize;
 
-    float: inherit;
+    float: right;
 
     height: @inheight;
     width: 130px;
-    margin-right: 6px;
+    margin-right: 35px;
     margin-bottom: 40px;
     padding-right: 10px;
     padding-left: 10px;
@@ -149,7 +148,7 @@ input.top
 {
     font-size: @infontsize;
 
-    width: 300px;
+    width: 250px;
     height: @inheight;
     margin-right: 6px;
     margin-bottom: 40px;
@@ -163,7 +162,6 @@ input.top
 
 div.header
 {
-    width: 100%;
     margin-bottom: 10px;
     padding: 2px;
     padding-left: 40px;
