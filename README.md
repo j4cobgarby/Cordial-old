@@ -9,6 +9,8 @@ http://j4cobgarby.github.io/Cordial
   - Mobile support.
   - User accounts
   - ~~Instead of choosing colour, choose topic - colour will be based on this.~~
+  - Making a modal appear for the message entry. I've already set up some basic
+    stuff for modals.
 
 ## My priorities:
   - The database.
