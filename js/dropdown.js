@@ -1,10 +1,11 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function showDrop() {
-    document.getElementById("category-drop").classList.toggle("show");
+  document.getElementById("category-drop").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it
+/*
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
@@ -17,4 +18,4 @@ window.onclick = function(event) {
       }
     }
   }
-}
+}*/
