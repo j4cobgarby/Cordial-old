@@ -44,15 +44,40 @@
 				<input class="top" id="topic" placeholder="Topic">
 				<input class="top msg" id="msg" placeholder="Message">
 				<div class="dropdown">
-				<button type="button" onclick="showDropdown();" class="dropbtn">Category</button>
-					<div class="dropdown-content" id="category-dropdown">
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
+					<button type="button" onclick="showDrop()" class="top dropbtn">Category</button>
+					<div class="dropdown-content" id="category-drop">
+						<button class="cat-type memes" type="button">
+							Memes</button>
+
+							<!--The buttons which use the different color tags are the
+							categories whose colours are too light to see white on.-->
+						<button class="cat-type funny" type="button" style="color:#5e5e5e;">
+							Funny</button>
+
+						<button class="cat-type animals" type="button">
+							Animals</button>
+
+						<button class="cat-type interesting" type="button" style="color:#5e5e5e;">
+							Interesting</button>
+
+						<button class="cat-type sad" type="button">
+							Sad</button>
+
+						<button class="cat-type programming" type="button">
+							Programming</button>
+
+						<button class="cat-type cordial" type="button">
+							Cordial</button>
+
+						<button class="cat-type tech" type="button">
+							Tech</button>
+
+						<button class="cat-type other" type="button" style="color:#5e5e5e;">
+							Other</button>
 					</div>
 				</div>
 				&nbsp;
-				<button onclick="cardFromInput()" type=
+				<button class="top" onclick="cardFromInput()" type=
 				"button">Post!</button>
 			</form>
 		</div>

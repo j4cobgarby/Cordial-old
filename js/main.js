@@ -6,7 +6,7 @@ var modal,
 	btn,
 	span
 
-var memes =       "#ed856c";
+var memes =       "#ed856c"; // 9 categories
 var funny =       "#f1e292";
 var animals =     "#83816c";
 var interesting = "#96e08a";
