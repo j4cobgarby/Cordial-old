@@ -6,6 +6,32 @@ var modal,
 	btn,
 	span
 
+var chosenCategory = 'other';
+
+var memes =       "#ed856c"; // 9 categories
+var funny =       "#f1e292";
+var animals =     "#83816c";
+var interesting = "#96e08a";
+var sad =         "#87cbd0";
+var programming = "#50656b";
+var tech =        "#c66481";
+var other =       "#e4e3e9";
+
+var ccols = {}; // category colours
+ccols.memes = memes;
+ccols.animals = animals;
+ccols.funny = funny;
+ccols.interesting = interesting;
+ccols.sad = sad;
+ccols.programming = programming;
+ccols.tech = tech;
+ccols.other = other;
+
+function setCat(to) {
+	chosenCategory = to;
+	alert(chosenCategory);
+}
+
 function modalInit() {
 	modal = document.getElementById( 'toolongModal' );
 
@@ -24,8 +50,6 @@ function modalInit() {
 function getRandomInt( min, max ) {
 	return Math.floor( Math.random() * ( max - min + 1 ) ) + min; // Literally just a random integer n where min <= n <= max
 }
-
-function writeToCards() {}
 
 function addCard( title, body, colour, whiteHead ) {
 	if ( !title || !body ) {
@@ -60,7 +84,7 @@ function tooDark( c ) {
 
 	var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
 
-	if ( luma < 110 ) { // luma is basically kind of how light it is
+	if ( luma < 128 ) { // luma is basically kind of how light it is
 		return true;
 	}
 	return false;
@@ -69,14 +93,14 @@ function tooDark( c ) {
 function cardFromInput() {
 	var title = document.getElementById( 'topic' ).value;
 	var message = document.getElementById( 'msg' ).value;
-	var colour = document.getElementById( 'picker' ).innerHTML;
+	var category = document.getElementById('cat-select').value;
+	var colour = ccols[category];
 
 	if ( message.length <= maxLength ) {
-		addCard( title, message, "#" + colour, tooDark( "#" + colour ) );
+		addCard( title, message, colour, tooDark( colour ) );
 		document.getElementById( 'topic' ).value = "";
 		document.getElementById( 'msg' ).value = "";
 	} else {
-		alert("doing");
 		modal.style.display = "block";
 	}
 }

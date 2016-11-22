@@ -1,19 +1,50 @@
 // out: styles.css, sourcemap: true, compress: true
 
-// Colours
-@maincolour:   #b984c6; // This will change more than this colour
-@darker:       darken(@maincolour, 11%);
-@lighter:      lighten(@maincolour, 29%);
-@buttonhover:  lighten(@maincolour, 27%);
-@buttonactive: lighten(@maincolour, 23%);
-@cardbg:       white;
-@bodybg:       #f2f2f2;
-@lgrey:        #ededed;
-@mgrey:        #d0d0d0;
-@dgrey:        #777;
+// UI Colours:
+@maincolour:     #fbe574; // This will change more than this colour
+@darker:         darken(@maincolour, 11%);
+@lighter:        lighten(@maincolour, 29%);
+@slightlighter:  lighten(@maincolour, 10%);
+@17percentlight: lighten(@maincolour, 17%);
+@buttonhover:    lighten(@maincolour, 27%);
+@buttonactive:   lighten(@maincolour, 23%);
+@cardbg:         white;
+@bodybg:         #f2f2f2;
+@lgrey:          #ededed;
+@mgrey:          #d0d0d0;
+@dgrey:          #777;
+
+@rad:          6px;
+@cardrad:      8px;
+
+// Theme colours:
+@memes:       #ffbf30;
+@animals:     #c9ae69;
+@funny:       #e8944f;
+@interesting: #96e08a;
+@sad:         #87cbd0;
+@programming: #50656b;
+@tech:        #c66481;
+@other:       #fff;
 
 @bodyfont: Lato;
 @headfont: Oswald;
+
+// Fonts
+@font-face {
+    font-family: "Lato";
+    src: url("../Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("../Lobster/Lobster-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../Oswald/Oswald-Regular.ttf");
+}
 
 body
 {
@@ -48,13 +79,13 @@ button
     outline: none;
 }
 
-button
+button.top
 {
     font-size: 16px;
 
     float: inherit;
 
-    height: 40px;
+    height: 42px;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-right: 10px;
@@ -62,7 +93,7 @@ button
 
     color: @maincolour;
     border-style: none;
-    border-radius: 5px;
+    border-radius: @rad;
     background-color: white;
 }
 
@@ -85,11 +116,28 @@ div.legal
     font-family: @bodyfont;
     font-size: 12px;
 
-    position: fixed;
-    top: 1em;
-    right: 1em;
+    float: right;
+
+    margin-top: 5px;
+    margin-right: 55px;
 
     color: @darker;
+}
+
+select
+{
+    font-size: 16px;
+
+    width: 160px;
+    height: 40px;
+    margin-right: 6px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+
+    transition-duration: .4s;
+
+    border-style: none;
+    border-radius: @rad;
 }
 
 input.top
@@ -105,7 +153,7 @@ input.top
     transition-duration: .4s;
 
     border-style: none;
-    border-radius: 5px;
+    border-radius: @rad;
 }
 
 input.top:focus
@@ -155,6 +203,11 @@ h6.card
     background-color: @cardbg;
 }
 
+img.card {
+    width: 100%;
+    margin-top: -5px; // To cancel out the margin below the heading
+}
+
 hr
 {
     margin: 0;
@@ -189,37 +242,120 @@ div.card
     margin: 10px;
 
     border: 1px solid @mgrey;
-    border-radius: 8px;
-    background-color: #fff;
+    border-radius: @cardrad;
+    border-bottom-left-radius: 2;
+    border-bottom-right-radius: 2;
+    background-color: white;
 }
 
-// Modal variables
+a {
+    color: @buttonactive;
+    text-decoration: none;
+}
+
+p.footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* MODAL */
 @errorcolour: #a34a4a;
-@amountdarken: 0.1;
+@amountdarken: .1;
 @modalbackground: #fef2f2;
 @modalborderrad: 6px;
 
-#modalp {
+#modalp
+{
     color: @errorcolour;
 }
 
-.modal {
-    display: none;
+.modal
+{
     position: fixed;
     z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
+
+    display: none;
+    overflow: auto;
+
     width: 100%;
     height: 100%;
-    overflow: auto;
+
     background-color: rgba(0,0,0,@amountdarken);
 }
 
-.modal-content {
-    text-align: center;
-    background-color: @modalbackground;
+.modal-content
+{
+    width: 40%;
     margin: 15% auto;
     padding: 20px;
+
+    text-align: center;
+
     border-radius: @modalborderrad;
-    width: 40%;
+    background-color: @modalbackground;
 }
+
+/* DROPDOWN */
+
+.dropbtn:hover {
+    background-color: @buttonhover;
+}
+
+.dropbtn:active {
+    background-color: @buttonactive;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: -30px;
+    background-color: @maincolour;
+    min-width: 150px;
+    overflow: auto;
+    box-shadow: 0 6px 0 0 @darker;
+    padding-bottom: 5px;
+    border-radius: @rad * 2; /* So that it looks like it's a locus (sort of) of
+                              * the bottom category */
+}
+
+.dropdown-content a, span {
+    color: @lighter;
+    font-family: Lato;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content button {
+    //background-color: @17percentlight;
+    border: none;
+    font-family: Lato;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    height: 30px;
+    min-width: 150px - (10px*2);
+    border-radius: @rad;
+    color: @lighter;
+}
+
+.memes       {background-color: @memes}
+.funny       {background-color: @funny}
+.animals     {background-color: @animals}
+.interesting {background-color: @interesting}
+.sad         {background-color: @sad}
+.programming {background-color: @programming}
+.tech        {background-color: @tech}
+.other       {background-color: @other}
+
+.dropdown a:hover, span:hover {background-color: @slightlighter;}
+
+.show {display:block;}

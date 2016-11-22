@@ -2,45 +2,96 @@
 
 <html lang="en-UK">
 <head>
+	<script type="text/javascript">
+	<!--
+	if (screen.width <= 699) {
+	document.location = "mobile.html";
+	}
+	//-->
+	</script>
+
 	<title>Cordial</title>
 	<meta charset="utf-8">
-	<link href=
-	"https://fonts.googleapis.com/css?family=Abril+Fatface|Lato|Lobster|Oswald"
-	rel="stylesheet">
+
+	<link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
+
 	<link href="css/styles.css" rel="stylesheet">
+
 	<script src="js/jscolor.min.js">
 	</script>
-	<script src="js/main.js">
-	</script>
+
 	<script src=
 	"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
+
+	<script src="js/main.js">
+	</script>
+
+	<script src="js/dropdown.js">
 	</script>
 </head>
 
 <body onload="modalInit();">
 	<div class="header">
 		<div class="legal">
-			Copyright &copy; 2016 j4cobgarby All Rights Reserved.
+			Copyright &copy; 2016 j4cobgarby
 		</div>
-
 
 		<h1 class="header">Cordial</h1>
 
+		<div class="inputs">
+			<form>
+				<input class="top" id="topic" placeholder="Topic">
+				<input class="top msg" id="msg" placeholder="Message">
+				<div class="dropdown">
+					<button type="button" onclick="showDrop()" class="top dropbtn">Category</button>
+					<div class="dropdown-content" id="category-drop">
+						<button class="cat-type memes" type="button" onclick="setCat('memes')">
+							Memes</button>
 
-		<form>
-			<input class="top" id="topic" placeholder="Topic">
-			<input class="top msg" id="msg" placeholder="Message">
-			<input class="top" id="img" placeholder="Image">
-			&nbsp;
-			<button onclick="cardFromInput()" type=
-			"button">Post!</button>
-		</form>
+							<!--The buttons which use the different color tags are the
+							categories whose colours are too light to see white on.-->
+						<button class="cat-type funny" type="button" onclick="setCat('funny')">
+							Funny</button>
+
+						<button class="cat-type animals" type="button">
+							Animals</button>
+
+						<button class="cat-type interesting" type="button">
+							Interesting</button>
+
+						<button class="cat-type sad" type="button">
+							Sad</button>
+
+						<button class="cat-type programming" type="button">
+							Programming</button>
+
+						<button class="cat-type tech" type="button">
+							Tech</button>
+
+						<button class="cat-type other" type="button" style="color:#5e5e5e;">
+							Other</button>
+					</div>
+				</div>
+				&nbsp;
+				<button class="top" onclick="cardFromInput()" type=
+				"button">Post!</button>
+			</form>
+		</div>
 	</div>
 
 
 	<div class="cards">
+		<!-- A CARD WITH AN IMAGE EXAMPLE
+		<div class="card">
+			<h1 class="card" style="background-color: rgb(131, 129, 108); color: white;">
+			Pupper</h1>
+			<img src="images/dog.png" alt="Dog" class="card" />
+			<p class="card">
+				Look! A pupper! ^
+			</p>
+		</div>-->
 	</div>
-
 
 	<div class="modal" id="toolongModal">
 		<div class="modal-content">
