@@ -6,13 +6,14 @@ var modal,
 	btn,
 	span
 
+var chosenCategory = 'other';
+
 var memes =       "#ed856c"; // 9 categories
 var funny =       "#f1e292";
 var animals =     "#83816c";
 var interesting = "#96e08a";
 var sad =         "#87cbd0";
 var programming = "#50656b";
-var cordial =     "#b984c6";
 var tech =        "#c66481";
 var other =       "#e4e3e9";
 
@@ -23,9 +24,13 @@ ccols.funny = funny;
 ccols.interesting = interesting;
 ccols.sad = sad;
 ccols.programming = programming;
-ccols.cordial = cordial;
 ccols.tech = tech;
 ccols.other = other;
+
+function setCat(to) {
+	chosenCategory = to;
+	alert(chosenCategory);
+}
 
 function modalInit() {
 	modal = document.getElementById( 'toolongModal' );
