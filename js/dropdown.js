@@ -4,18 +4,13 @@ function showDrop() {
   document.getElementById("category-drop").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
-/*
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+/* Handles showing/hiding the dropdown when the button is pressed */
+$(document).click(function(event) {
+  var shown = document.getElementById("category-drop")
+    .classList.contains("show");
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+  if ((shown && event.target.id != "dropbtn") ||
+      (!shown && event.target.id == "dropbtn")) {
+    showDrop();
   }
-}*/
+});

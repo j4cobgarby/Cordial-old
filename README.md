@@ -16,6 +16,8 @@ http://j4cobgarby.github.io/Cordial
   - The database.
   - Mobile support.
   - Images support.
-<hr>
+
+***
+
 *Anything else you want, tell me!*<br>
 ***If you think you can help with the app, do!***
