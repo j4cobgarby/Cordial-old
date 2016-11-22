@@ -4,7 +4,7 @@ function showDrop() {
   document.getElementById("category-drop").classList.toggle("show");
 }
 
-/* Handles showing/hiding the dropdown when the button is pressed */
+/* Handles showing/hiding the dropdown when clicked outside */
 $(document).click(function(event) {
   var shown = document.getElementById("category-drop")
     .classList.contains("show");
