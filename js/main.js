@@ -29,7 +29,7 @@ ccols.other = other;
 
 function setCat(to) {
 	chosenCategory = to;
-	alert(chosenCategory);
+	//alert(chosenCategory);
 }
 
 function modalInit() {

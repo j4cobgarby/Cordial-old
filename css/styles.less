@@ -97,14 +97,14 @@ button.top
     background-color: white;
 }
 
-button:hover
+button.top:hover
 {
     cursor: pointer;
 
     background-color: @buttonhover;
 }
 
-button:active
+button.top:active
 {
     cursor: pointer;
 
@@ -335,7 +335,6 @@ p.footer {
 }
 
 .dropdown-content button {
-    //background-color: @17percentlight;
     border: none;
     font-family: Lato;
     margin-top: 5px;
@@ -347,14 +346,24 @@ p.footer {
     color: @lighter;
 }
 
-.memes       {background-color: @memes}
-.funny       {background-color: @funny}
-.animals     {background-color: @animals}
-.interesting {background-color: @interesting}
-.sad         {background-color: @sad}
-.programming {background-color: @programming}
-.tech        {background-color: @tech}
-.other       {background-color: @other}
+.cat-type:hover {
+    cursor: pointer;
+}
+
+.cat-type:active {
+    box-shadow: none;
+    margin-top: 11px;
+    margin-bottom: -1px;
+}
+
+.memes       {background-color: @memes; box-shadow: 0 6px 0 0 darken(@memes, 10%);}
+.funny       {background-color: @funny; box-shadow: 0 6px 0 0 darken(@funny, 10%);}
+.animals     {background-color: @animals; box-shadow: 0 6px 0 0 darken(@animals, 10%);}
+.interesting {background-color: @interesting; box-shadow: 0 6px 0 0 darken(@interesting, 10%);}
+.sad         {background-color: @sad; box-shadow: 0 6px 0 0 darken(@sad, 10%);}
+.programming {background-color: @programming; box-shadow: 0 6px 0 0 darken(@programming, 10%);}
+.tech        {background-color: @tech; box-shadow: 0 6px 0 0 darken(@tech, 10%);}
+.other       {background-color: @other; box-shadow: 0 6px 0 0 darken(@other, 10%);}
 
 .dropdown a:hover, span:hover {background-color: @slightlighter;}
 
