@@ -7,6 +7,8 @@ http://j4cobgarby.github.io/Cordial
 Optimised for Chrome and Opera<br/><br/>
 *Does work, but not so well, in Firefox*<br/>
 
+![Image didn't load?](https://github.com/j4cobgarby/Cordial/_forGithub/screenshot.png "Here's what it looks like!")
+
 <hr/>
 
 ## What needs doing?
