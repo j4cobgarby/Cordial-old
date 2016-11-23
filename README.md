@@ -1,11 +1,13 @@
 # Cordial
-A simple social networking web app
+A simple social networking web app.
 
 http://j4cobgarby.github.io/Cordial
 
-**Does not work in Internet Explorer**
-Optimised for Chrome and Opera
-*Does work, but not so well, in Firefox*
+**Does not work in Internet Explorer**<br/>
+Optimised for Chrome and Opera<br/><br/>
+*Does work, but not so well, in Firefox*<br/>
+
+<hr/>
 
 ## What needs doing?
   - [ ] A database for all the cards. (I'll be doing this one, but help is appreciated!)
