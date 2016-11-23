@@ -2,6 +2,10 @@
 
 <html lang="en-UK">
 <head>
+	<script src=
+	"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
+
 	<script type="text/javascript">
 	<!--
 	if (screen.width <= 699) {
@@ -17,12 +21,7 @@
 
 	<link href="css/styles.css" rel="stylesheet">
 
-	<script src="js/jscolor.min.js">
-	</script>
-
-	<script src=
-	"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-	</script>
+	<script src="js/jscolor.min.js"></script>
 
 	<script src="js/main.js">
 	</script>
@@ -46,31 +45,40 @@
 				<div class="dropdown">
 					<button id="dropbtn" type="button" onclick="showDrop()" class="top dropbtn">Category</button>
 					<div class="dropdown-content" id="category-drop">
-						<button class="cat-type memes" type="button" onclick="setCat('memes')">
+						<!-- THESE ARE THE BUTTONS IN THE DROPDOWN -->
+						<button class="cat-type memes" type="button"
+						onclick="setCat('memes')">
 							Memes</button>
 
-							<!--The buttons which use the different color tags are the
-							categories whose colours are too light to see white on.-->
-						<button class="cat-type funny" type="button" onclick="setCat('funny')">
+						<button class="cat-type funny" type="button"
+						onclick="setCat('funny')">
 							Funny</button>
 
-						<button class="cat-type animals" type="button" onclick="setCat('animals')">
+						<button class="cat-type animals" type="button"
+						onclick="setCat('animals')">
 							Animals</button>
 
-						<button class="cat-type interesting" type="button" onclick="setCat('interesting')">
+						<button class="cat-type interesting" type="button"
+						onclick="setCat('interesting')">
 							Interesting</button>
 
-						<button class="cat-type sad" type="button" onclick="setCat('sad')">
-							Sad</button>
+						<button class="cat-type conv" type="button"
+						onclick="setCat('conv')">
+							Conversation</button>
 
-						<button class="cat-type programming" type="button" onclick="setCat('programming')">
+						<button class="cat-type programming" type="button"
+						onclick="setCat('programming')">
 							Programming</button>
 
-						<button class="cat-type tech" type="button" onclick="setCat('tech')">
+						<button class="cat-type tech" type="button"
+						onclick="setCat('tech')">
 							Tech</button>
 
-						<button class="cat-type other" type="button" style="color:#5e5e5e;" onclick="setCat('other')">
+						<button class="cat-type other" type="button"
+						style="color:#5e5e5e;"
+						onclick="setCat('other')">
 							Other</button>
+						<!-- END OF DROPDOWN BUTTONS -->
 					</div>
 				</div>
 				&nbsp;
@@ -87,7 +95,7 @@
 	<div class="modal" id="toolongModal">
 		<div class="modal-content">
 			<p id="modalp">That's <b>too many characters!</b> The maximum is
-			<b>400</b></p>
+			<b>400</b> for the message, and <b>12</b> for the title!</p>
 		</div>
 	</div>
 </body>

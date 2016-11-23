@@ -1,6 +1,7 @@
 // Some functions to create cards
 
 var maxLength = 400;
+var maxTitle = 20;
 
 var modal,
 	btn,
@@ -8,27 +9,30 @@ var modal,
 
 var chosenCategory = 'other';
 
-var memes =       "#ed856c"; // 9 categories
-var funny =       "#f1e292";
-var animals =     "#83816c";
+var memes =       "#ffbf30"; // 9 categories
+var animals =     "#c9ae69";
+var funny =       "#e8944f";
 var interesting = "#96e08a";
-var sad =         "#87cbd0";
+var conv =         "#87cbd0";
 var programming = "#50656b";
 var tech =        "#c66481";
-var other =       "#e4e3e9";
+var other =       "#ffffff";
 
 var ccols = {}; // category colours
 ccols.memes = memes;
 ccols.animals = animals;
 ccols.funny = funny;
 ccols.interesting = interesting;
-ccols.sad = sad;
+ccols.conv = conv;
 ccols.programming = programming;
 ccols.tech = tech;
 ccols.other = other;
 
 function setCat(to) {
 	chosenCategory = to;
+	var btn = document.getElementById('dropbtn');
+	btn.style.backgroundColor = ccols[to];
+	btn.style.color = tooDark(ccols[to]) ? "white" : "black";
 	//alert(chosenCategory);
 }
 
@@ -48,7 +52,8 @@ function modalInit() {
 
 
 function getRandomInt( min, max ) {
-	return Math.floor( Math.random() * ( max - min + 1 ) ) + min; // Literally just a random integer n where min <= n <= max
+	return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+	// Literally just a random integer n where min <= n <= max
 }
 
 function addCard( title, body, colour, whiteHead ) {
@@ -84,7 +89,7 @@ function tooDark( c ) {
 
 	var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
 
-	if ( luma < 128 ) { // luma is basically kind of how light it is
+	if ( luma < 254 ) { // luma is basically kind of how light it is
 		return true;
 	}
 	return false;
@@ -93,10 +98,9 @@ function tooDark( c ) {
 function cardFromInput() {
 	var title = document.getElementById( 'topic' ).value;
 	var message = document.getElementById( 'msg' ).value;
-	var category = document.getElementById('cat-select').value;
-	var colour = ccols[category];
+	var colour = ccols[chosenCategory];
 
-	if ( message.length <= maxLength ) {
+	if ( message.length <= maxLength && title.length <= maxTitle ) {
 		addCard( title, message, colour, tooDark( colour ) );
 		document.getElementById( 'topic' ).value = "";
 		document.getElementById( 'msg' ).value = "";

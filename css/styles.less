@@ -1,7 +1,7 @@
 // out: styles.css, sourcemap: true, compress: true
 
 // UI Colours:
-@maincolour:     #fbe574; // This will change more than this colour
+@maincolour:     #83def2; // This will change more than this colour
 @darker:         darken(@maincolour, 11%);
 @lighter:        lighten(@maincolour, 29%);
 @slightlighter:  lighten(@maincolour, 10%);
@@ -22,10 +22,10 @@
 @animals:     #c9ae69;
 @funny:       #e8944f;
 @interesting: #96e08a;
-@sad:         #87cbd0;
+@conv:        #87cbd0;
 @programming: #50656b;
 @tech:        #c66481;
-@other:       #fff;
+@other:       #ffffff;
 
 @bodyfont: Lato;
 @headfont: Oswald;
@@ -194,9 +194,12 @@ h6.card
     font-family: @headfont;
 
     height: 60px;
+    font-size: 30px;
+    font-size-adjust: auto;
     margin-top: 0;
     margin-bottom: 5px;
     padding-top: 10px;
+    overflow-x: hidden;
 
     text-align: center;
 
@@ -310,6 +313,7 @@ p.footer {
 .dropdown {
     position: relative;
     display: inline-block;
+    font-family: Oswald;
 }
 
 .dropdown-content {
@@ -338,7 +342,7 @@ p.footer {
     border: none;
     font-family: Lato;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     margin-left: 10px;
     height: 30px;
     min-width: 150px - (10px*2);
@@ -353,14 +357,14 @@ p.footer {
 .cat-type:active {
     box-shadow: none;
     margin-top: 11px;
-    margin-bottom: -1px;
+    margin-bottom: 2px;
 }
 
 .memes       {background-color: @memes; box-shadow: 0 6px 0 0 darken(@memes, 10%);}
 .funny       {background-color: @funny; box-shadow: 0 6px 0 0 darken(@funny, 10%);}
 .animals     {background-color: @animals; box-shadow: 0 6px 0 0 darken(@animals, 10%);}
 .interesting {background-color: @interesting; box-shadow: 0 6px 0 0 darken(@interesting, 10%);}
-.sad         {background-color: @sad; box-shadow: 0 6px 0 0 darken(@sad, 10%);}
+.conv        {background-color: @conv; box-shadow: 0 6px 0 0 darken(@conv, 10%);}
 .programming {background-color: @programming; box-shadow: 0 6px 0 0 darken(@programming, 10%);}
 .tech        {background-color: @tech; box-shadow: 0 6px 0 0 darken(@tech, 10%);}
 .other       {background-color: @other; box-shadow: 0 6px 0 0 darken(@other, 10%);}
