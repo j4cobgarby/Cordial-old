@@ -21,9 +21,10 @@
 	<script src="js/jscolor.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/dropdown.js"></script>
+	<script src="js/tooltip.js"></script>
 </head>
 
-<body onload="initModals();">
+<body onload="initTooltip();">
 	<div class="header">
 		<div class="legal">
 			Copyright &copy; 2016 j4cobgarby
@@ -80,8 +81,8 @@
 				<!-- Adding 'gone' to the classlist of these, renders them
 			 	invisible. This will be the premace for the showing and hiding
 				of this tooltip. -->
-				<div class="tooltipTri"></div>
-				<div class="tooltip" id="tooLong">
+				<div class="tooltipTri gone" id="arrow"></div>
+				<div class="tooltip gone" id="tooLong">
 					<p class="tooltip">Too long!</p>
 				</div>
 			</form>
