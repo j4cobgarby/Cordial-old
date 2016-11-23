@@ -7,30 +7,23 @@
 	</script>
 
 	<script type="text/javascript">
-	<!--
-	if (screen.width <= 699) {
-	document.location = "mobile.html";
-	}
-	//-->
+		if (screen.width <= 699) {
+			document.location = "mobile.html";
+		}
 	</script>
 
 	<title>Cordial</title>
 	<meta charset="utf-8">
 
 	<link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
-
 	<link href="css/styles.css" rel="stylesheet">
 
 	<script src="js/jscolor.min.js"></script>
-
-	<script src="js/main.js">
-	</script>
-
-	<script src="js/dropdown.js">
-	</script>
+	<script src="js/main.js"></script>
+	<script src="js/dropdown.js"></script>
 </head>
 
-<body onload="modalInit();">
+<body onload="initModals();">
 	<div class="header">
 		<div class="legal">
 			Copyright &copy; 2016 j4cobgarby
@@ -84,19 +77,18 @@
 				&nbsp;
 				<button class="top" onclick="cardFromInput()" type=
 				"button">Post!</button>
+				<!-- Adding 'gone' to the classlist of these, renders them
+			 	invisible. This will be the premace for the showing and hiding
+				of this tooltip. -->
+				<div class="tooltipTri"></div>
+				<div class="tooltip" id="tooLong">
+					<p class="tooltip">Too long!</p>
+				</div>
 			</form>
 		</div>
 	</div>
 
-
 	<div class="cards">
-	</div>
-
-	<div class="modal" id="toolongModal">
-		<div class="modal-content">
-			<p id="modalp">That's <b>too many characters!</b> The maximum is
-			<b>400</b> for the message, and <b>12</b> for the title!</p>
-		</div>
 	</div>
 </body>
 </html>

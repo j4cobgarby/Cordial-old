@@ -3,17 +3,13 @@
 var maxLength = 400;
 var maxTitle = 20;
 
-var modal,
-	btn,
-	span
-
 var chosenCategory = 'other';
 
 var memes =       "#ffbf30"; // 9 categories
-var animals =     "#c9ae69";
+var animals =     "#ad97ec";
 var funny =       "#e8944f";
 var interesting = "#96e08a";
-var conv =         "#87cbd0";
+var conv =        "#87cbd0";
 var programming = "#50656b";
 var tech =        "#c66481";
 var other =       "#ffffff";
@@ -35,21 +31,6 @@ function setCat(to) {
 	btn.style.color = tooDark(ccols[to]) ? "white" : "black";
 	//alert(chosenCategory);
 }
-
-function modalInit() {
-	modal = document.getElementById( 'toolongModal' );
-
-	span = document.getElementsByClassName( 'close' );
-
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-
-	window.onclick = function( event ) {
-		modal.style.display = "none";
-	}
-}
-
 
 function getRandomInt( min, max ) {
 	return Math.floor( Math.random() * ( max - min + 1 ) ) + min;

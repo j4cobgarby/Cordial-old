@@ -1,25 +1,32 @@
-// out: styles.css, sourcemap: true, compress: true
+// out: styles.css, sourcemap: false, compress: true
 
 // UI Colours:
 @maincolour:     #83def2; // This will change more than this colour
+
 @darker:         darken(@maincolour, 11%);
-@lighter:        lighten(@maincolour, 29%);
 @slightlighter:  lighten(@maincolour, 10%);
 @17percentlight: lighten(@maincolour, 17%);
-@buttonhover:    lighten(@maincolour, 27%);
 @buttonactive:   lighten(@maincolour, 23%);
-@cardbg:         white;
-@bodybg:         #f2f2f2;
-@lgrey:          #ededed;
-@mgrey:          #d0d0d0;
+@lighter:        lighten(@maincolour, 26%);
+@buttonhover:    lighten(@maincolour, 27%);
+
 @dgrey:          #777;
+@mgrey:          #d0d0d0;
+@lgrey:          #ededed;
+@bodybg:         #f2f2f2;
+@cardbg:         white;
 
 @rad:          6px;
 @cardrad:      8px;
 
+@shadowdrop:   6px;
+@inputheight:  40px;
+
+@inputborder: 1px solid @darker;
+
 // Theme colours:
 @memes:       #ffbf30;
-@animals:     #c9ae69;
+@animals:     #ad97ec;
 @funny:       #e8944f;
 @interesting: #96e08a;
 @conv:        #87cbd0;
@@ -85,7 +92,7 @@ button.top
 
     float: inherit;
 
-    height: 42px;
+    height: @inputheight + 4px;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-right: 10px;
@@ -93,6 +100,7 @@ button.top
 
     color: @maincolour;
     border-style: none;
+    border: @inputborder;
     border-radius: @rad;
     background-color: white;
 }
@@ -124,28 +132,12 @@ div.legal
     color: @darker;
 }
 
-select
-{
-    font-size: 16px;
-
-    width: 160px;
-    height: 40px;
-    margin-right: 6px;
-    margin-bottom: 40px;
-    padding-left: 10px;
-
-    transition-duration: .4s;
-
-    border-style: none;
-    border-radius: @rad;
-}
-
 input.top
 {
     font-size: 16px;
 
     width: 85px;
-    height: 40px;
+    height: @inputheight;
     margin-right: 6px;
     margin-bottom: 40px;
     padding-left: 10px;
@@ -153,6 +145,7 @@ input.top
     transition-duration: .4s;
 
     border-style: none;
+    border: @inputborder;
     border-radius: @rad;
 }
 
@@ -174,14 +167,11 @@ div.header
     padding-left: 40px;
 
     background-color: @maincolour;
-    box-shadow: 0 6px 0 0 @darker;
+    box-shadow: 0 @shadowdrop 0 0 @darker;
 }
 
-p
-{
+p {
     font-family: @bodyfont;
-
-    color: @lighter;
 }
 
 h1.card,
@@ -204,6 +194,44 @@ h6.card
     text-align: center;
 
     background-color: @cardbg;
+}
+
+div.tooltip {
+    display: inline;
+    position: absolute;
+    float: left;
+    height: 30px;
+    vertical-align: middle;
+    top: 73px;
+    left: 435px;
+    margin: 0;
+    padding: 0;
+}
+
+@tooltipBg: #fb8181;
+
+div.tooltipTri {
+    display: inline;
+    position: absolute;
+    float: left;
+    top: 102px;
+    left: 425px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent @tooltipBg transparent transparent;
+}
+
+p.tooltip {
+    background-color: @tooltipBg;
+    color: #fffbfc;
+    padding: 8px 12px 8px 12px;
+    border-radius: @rad;
+}
+
+.gone {
+    visibility: hidden;
 }
 
 img.card {
@@ -261,45 +289,6 @@ p.footer {
     font-size: 12px;
 }
 
-/* MODAL */
-@errorcolour: #a34a4a;
-@amountdarken: .1;
-@modalbackground: #fef2f2;
-@modalborderrad: 6px;
-
-#modalp
-{
-    color: @errorcolour;
-}
-
-.modal
-{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    display: none;
-    overflow: auto;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0,0,0,@amountdarken);
-}
-
-.modal-content
-{
-    width: 40%;
-    margin: 15% auto;
-    padding: 20px;
-
-    text-align: center;
-
-    border-radius: @modalborderrad;
-    background-color: @modalbackground;
-}
-
 /* DROPDOWN */
 
 .dropbtn:hover {
@@ -324,7 +313,7 @@ p.footer {
     background-color: @maincolour;
     min-width: 150px;
     overflow: auto;
-    box-shadow: 0 6px 0 0 @darker;
+    box-shadow: 0 @shadowdrop 0 0 @darker;
     padding-bottom: 5px;
     border-radius: @rad * 2; /* So that it looks like it's a locus (sort of) of
                               * the bottom category */
@@ -360,14 +349,14 @@ p.footer {
     margin-bottom: 2px;
 }
 
-.memes       {background-color: @memes; box-shadow: 0 6px 0 0 darken(@memes, 10%);}
-.funny       {background-color: @funny; box-shadow: 0 6px 0 0 darken(@funny, 10%);}
-.animals     {background-color: @animals; box-shadow: 0 6px 0 0 darken(@animals, 10%);}
-.interesting {background-color: @interesting; box-shadow: 0 6px 0 0 darken(@interesting, 10%);}
-.conv        {background-color: @conv; box-shadow: 0 6px 0 0 darken(@conv, 10%);}
-.programming {background-color: @programming; box-shadow: 0 6px 0 0 darken(@programming, 10%);}
-.tech        {background-color: @tech; box-shadow: 0 6px 0 0 darken(@tech, 10%);}
-.other       {background-color: @other; box-shadow: 0 6px 0 0 darken(@other, 10%);}
+.memes       {background-color: @memes; box-shadow: 0 @shadowdrop 0 0       darken(@memes, 7%);}
+.funny       {background-color: @funny; box-shadow: 0 @shadowdrop 0 0       darken(@funny, 7%);}
+.animals     {background-color: @animals; box-shadow: 0 @shadowdrop 0 0     darken(@animals, 7%);}
+.interesting {background-color: @interesting; box-shadow: 0 @shadowdrop 0 0 darken(@interesting, 7%);}
+.conv        {background-color: @conv; box-shadow: 0 @shadowdrop 0 0        darken(@conv, 7%);}
+.programming {background-color: @programming; box-shadow: 0 @shadowdrop 0 0 darken(@programming, 7%);}
+.tech        {background-color: @tech; box-shadow: 0 @shadowdrop 0 0        darken(@tech, 7%);}
+.other       {background-color: @other; box-shadow: 0 @shadowdrop 0 0       darken(@other, 7%);}
 
 .dropdown a:hover, span:hover {background-color: @slightlighter;}
 
