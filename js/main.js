@@ -1,7 +1,7 @@
 // Some functions to create cards
 
 var maxLength = 400;
-var maxTitle = 30;
+var maxTitle = 20;
 
 var chosenCategory = 'other';
 
@@ -86,7 +86,6 @@ function cardFromInput() {
 		document.getElementById( 'topic' ).value = "";
 		document.getElementById( 'msg' ).value = "";
 	} else {
-		//modal.style.display = "block";
-		// ^ does not now work.
+		// If message is too long..
 	}
 }

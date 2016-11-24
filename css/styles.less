@@ -70,6 +70,7 @@ h5.header,
 h6.header
 {
     font-family: Lobster;
+    font-size: 40px;
 
     color: @lighter;
 }
@@ -197,37 +198,46 @@ h6.card
 }
 
 div.tooltip {
-    display: inline;
-    position: absolute;
-    float: left;
     height: 30px;
-    vertical-align: middle;
-    top: 73px;
-    left: 435px;
-    margin: 0;
     padding: 0;
+    width: 100px;
+}
+
+table, th {
+    //border: 1px solid black;
+    position: relative;
+    width: auto;
 }
 
 @tooltipBg: #fb8181;
 
+div.tooltipparent {
+    display: inline-block;
+    padding: 0;
+    float: none;
+}
+
 div.tooltipTri {
-    display: inline;
-    position: absolute;
-    float: left;
-    top: 102px;
-    left: 425px;
+    display: block;
+    //position: absolute;
     width: 0;
     height: 0;
+    margin-right: 0px;
     border-style: solid;
     border-width: 5px 10px 5px 0;
     border-color: transparent @tooltipBg transparent transparent;
 }
 
-p.tooltip {
+p.tooltipp {
     background-color: @tooltipBg;
     color: #fffbfc;
     padding: 8px 12px 8px 12px;
     border-radius: @rad;
+    margin: 0;
+    margin-top: -26px;
+    width: 200px;
+
+    position: absolute;
 }
 
 .gone {

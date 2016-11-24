@@ -38,14 +38,13 @@
 
 		<h1 class="header">Cordial</h1>
 
-		<div class="inputs">
-			<form>
-				<input class="top" id="topic" placeholder="Topic">
-				<input class="top msg" id="msg" placeholder="Message">
+		<table>
+			<th><input class="top" id="topic" placeholder="Topic"></th>
+			<th><input class="top msg" id="msg" placeholder="Message"></th>
+			<th>
 				<div class="dropdown">
 					<button id="dropbtn" type="button" onclick="showDrop()" class="top dropbtn">Category</button>
 					<div class="dropdown-content" id="category-drop">
-						<!-- THESE ARE THE BUTTONS IN THE DROPDOWN -->
 						<button class="cat-type memes" type="button"
 						onclick="setCat('memes')">
 							Memes</button>
@@ -78,21 +77,17 @@
 						style="color:#5e5e5e;"
 						onclick="setCat('other')">
 							Other</button>
-						<!-- END OF DROPDOWN BUTTONS -->
 					</div>
 				</div>
-				&nbsp;
-				<button class="top" onclick="cardFromInput()" type=
-				"button">Post!</button>
-				<!-- Adding 'gone' to the classlist of these, renders them
-			 	invisible. This will be the premace for the showing and hiding
-				of this tooltip. -->
-				<div class="tooltipTri gone" id="arrow"></div>
+			</th>
+			<th><button class="top" onclick="cardFromInput()" type=
+			"button">Post!</button></th>
+			<th>
 				<div class="tooltip gone" id="tooLong">
-					<p class="tooltip">Too long!</p>
+					<p class="tooltipp" id="tooltipContent">Too long!</p>
 				</div>
-			</form>
-		</div>
+			</th>
+		</table>
 	</div>
 
 	<div class="cards">
