@@ -6,9 +6,11 @@ http://j4cobgarby.github.io/Cordial
 ## Browser support
 | Firefox | Waterfox | Google Chrome | Opera | Internet Explorer |
 | ------- | -------- | ------------- | ----- | ----------------- |
-| OKAY    | GOOD     | GOOD          | GOOD  | VERY BAD          |
+| Okay    | Good     | Good          | Good  | Unusable          |
 
-![Image didn't load?](https://github.com/j4cobgarby/Cordial/blob/master/_forGithub/screenshot.png "Here's what it looks like!")
+![Image didn't load.]
+(https://github.com/j4cobgarby/Cordial/blob/master/_forGithub/screenshot.png
+  "Here's what it looks like!")
 
 <hr/>
 
