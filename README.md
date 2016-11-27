@@ -6,7 +6,7 @@ http://j4cobgarby.github.io/Cordial
 ## Browser support
 | Firefox | Waterfox | Google Chrome | Opera | Internet Explorer |
 | ------- | -------- | ------------- | ----- | ----------------- |
-| [x]     | [x]      | [x]           | [x]   | [ ]               |
+| OKAY    | GOOD     | GOOD          | GOOD  | VERY BAD          |
 
 ![Image didn't load?](https://github.com/j4cobgarby/Cordial/blob/master/_forGithub/screenshot.png "Here's what it looks like!")
 
