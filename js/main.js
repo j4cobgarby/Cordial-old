@@ -13,9 +13,9 @@ var conv = "#87cbd0";
 var programming = "#50656b";
 var tech = "#c66481";
 var other = "#ffffff";
-var festive = "#a43535";
+var festive = "#cb150b";
 
-var ccols = {}; // category colours
+var ccols = { /* vv Categories and their colours will be in here. */ };
 ccols.memes = memes;
 ccols.animals = animals;
 ccols.funny = funny;
