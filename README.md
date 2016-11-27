@@ -15,7 +15,7 @@ http://j4cobgarby.github.io/Cordial
 <hr/>
 
 ## What needs doing?
-  - [ ] A database for all the cards. (I'll be doing this one, but help is appreciated!)
+  - [ ] A database for all the cards.
   - [ ] Support for image uploading.
   - [x] Mobile support.
   - [ ] User accounts

@@ -1,16 +1,16 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function showDrop() {
-  document.getElementById("category-drop").classList.toggle("show");
+    document.getElementById("category-drop").classList.toggle("show");
 }
 
 /* Handles showing/hiding the dropdown when clicked outside */
 $(document).click(function(event) {
-  var shown = document.getElementById("category-drop")
-    .classList.contains("show");
+    var shown = document.getElementById("category-drop")
+        .classList.contains("show");
 
-  if ((shown && event.target.id != "dropbtn") ||
-      (!shown && event.target.id == "dropbtn")) {
-    showDrop();
-  }
+    if ((shown && event.target.id != "dropbtn") ||
+        (!shown && event.target.id == "dropbtn")) {
+        showDrop();
+    }
 });
