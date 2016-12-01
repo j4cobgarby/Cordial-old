@@ -1,6 +1,8 @@
 # Cordial
-A simple social networking web app.
+A simple social networking web app, where you can post something in any of some
+set categories. **Very early access at the moment**
 
+## Url:
 http://j4cobgarby.github.io/Cordial
 
 ## Browser support
@@ -14,6 +16,13 @@ http://j4cobgarby.github.io/Cordial
 
 <hr/>
 
+## Contributing
+1. Fork it!
+2. Create your feature branch: `git checkout -b new-feature`
+3. Commit your changes: `git commit -am 'Added whatever feature'`
+4. Push to the branch: `git push origin new-feature`
+5. Submit a pull request!
+
 ## What needs doing?
   - [ ] A database for all the cards.
   - [ ] Support for image uploading.
@@ -21,3 +30,5 @@ http://j4cobgarby.github.io/Cordial
   - [ ] User accounts
   - [x] Instead of choosing colour, choose topic - colour will be based on this.
   - [ ] Making a modal, dropdown or something like that appear for the message entry.
+
+## License
