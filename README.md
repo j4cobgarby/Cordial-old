@@ -4,9 +4,9 @@ A simple social networking web app.
 http://j4cobgarby.github.io/Cordial
 
 ## Browser support
-| Firefox | Waterfox | Google Chrome | Opera | Internet Explorer |
-| ------- | -------- | ------------- | ----- | ----------------- |
-| Okay    | Good     | Good          | Good  | Unusable          |
+| Firefox | Waterfox | Google Chrome | Opera | Internet Explorer | Safari |
+| ------- | -------- | ------------- | ----- | ----------------- | ------ |
+| Okay    | Good     | Good          | Good  | Unusable          | Good   |
 
 ![Image didn't load.]
 (https://github.com/j4cobgarby/Cordial/blob/master/_forGithub/screenshot.png
