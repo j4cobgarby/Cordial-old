@@ -1,0 +1,62 @@
+// out: card.css, compress: true
+
+@import 'master';
+
+@card-width: 96%;
+@card-height: 300px;
+@card-bg-colour: #f7f7f7;
+@card-radius: 6px;
+@card-margin: 10px;
+
+@card-h1-height: 50px;
+@card-h1-font-size: 25pt;
+@card-h1-padding-cancel-out: 8px;
+
+@card-p-padding: 20px;
+@card-p-colour: darken(@card-bg-colour, 30%);
+
+div.card
+{
+    display: inline-block;
+    //width: @card-width;
+
+    min-height: @card-height;
+    margin: @card-margin;
+    margin-right: 20%;
+    margin-left: 20%;
+    width: 60%;
+
+    border: 1px solid darken(@card-bg-colour, 10%);
+    border-radius: @card-radius;
+    background-color: @card-bg-colour;
+
+    h1
+    {
+        font-family: Raleway;
+        font-size: @card-h1-font-size;
+        font-weight: bold;
+
+        overflow-x: hidden;
+
+        height: @card-h1-height;
+        padding-top: @card-h1-padding-cancel-out;
+
+        text-align: center;
+
+        color: white;
+        border-top-left-radius: @card-radius;
+        border-top-right-radius: @card-radius;
+        background-color: #ecbc7d;
+    }
+
+    p
+    {
+        font-family: Montserrat;
+
+        padding: @card-p-padding;
+
+        letter-spacing: .2px;
+
+        color: @card-p-colour;
+    }
+}
