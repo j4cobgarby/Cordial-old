@@ -23,5 +23,6 @@ function modalToggle (id) {
 
 function isModalDown (id) {
     var modal = document.getElementById(id);
+    console.log(modal.classList.contains("down"));
     return modal.classList.contains("down"); // TODO: Better checking
 }

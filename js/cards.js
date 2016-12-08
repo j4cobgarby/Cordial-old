@@ -68,18 +68,21 @@ ccols.tech = tech;
 ccols.other = other;
 
 var cnames = {};
-ccols.memes = "Memes";
-ccols.animals = "Animals";
-ccols.funny = "Funny";
-ccols.interesting = "Interesting";
-ccols.conv = "Conversation";
-ccols.programming = "Programming";
-ccols.tech = "Tech";
-ccols.other = "Other";
+cnames.memes = "Memes";
+cnames.animals = "Animals";
+cnames.funny = "Funny";
+cnames.interesting = "Interesting";
+cnames.conv = "Conversation";
+cnames.programming = "Programming";
+cnames.tech = "Tech";
+cnames.other = "Other";
+
+var topicInput,
+    msgInput;
 
 function initCards() {
-    var topicInput = document.getElementById('topic-in');
-    var msgInput = document.getElementById('msg-txt');
+    topicInput = document.getElementById('topic-in');
+    msgInput = document.getElementById('msg-txt');
 }
 
 /*
