@@ -1,0 +1,333 @@
+// out: outs/master.css
+
+@import "globals";
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+div.header
+{
+    position: fixed;
+
+    width: 100%;
+    height: @header-height;
+
+    background-color: lighten(@maincolour, 20%);
+
+    div.logo
+    {
+        position: relative;
+
+        display: inline-block;
+        float: right;
+
+        img
+        {
+            position: relative;
+            top: 7px;
+            right: 10px;
+
+            display: inline;
+
+            width: @logo-width;
+
+            vertical-align: middle;
+
+                    filter: invert();
+            -webkit-filter: invert();
+        }
+    }
+
+    div.title
+    {
+        text-decoration: none;
+        position: fixed;
+
+        width: @sidebar-width;
+        height: @header-height;
+        padding-top: 15px;
+
+        background-color: lighten(@maincolour, 24%);
+
+        align-items: center;
+
+        h1
+        {
+            font-family: @title-font;
+            font-size: @title-size;
+
+            text-align: center;
+
+            color: white;
+            text-shadow: @title-shadow-colour @title-shadow-length @title-shadow-length 0;
+        }
+    }
+
+    ul
+    {
+        display: inline;
+
+        margin-left: @sidebar-width;
+        li
+        {
+            display: inline;
+
+            button:hover
+            {
+                background-color: darken(@post-param-bg-colour, 4%);
+            }
+
+            button:active
+            {
+                padding: 0; // Otherwise the text gets shifted slightly
+
+                background-color: darken(@post-param-bg-colour, 6%);
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+
+            h1 {
+                text-decoration: none;
+                font-family: Montserrat;
+                margin-left: 15px;
+                font-size: 30px;
+                padding: 0;
+                display: inline-block;
+                color: white;
+                margin-top: 15px;
+            }
+
+            input,
+            button
+            {
+                font-family: Montserrat;
+
+                height: @post-param-height;
+                margin-top: (@header-height - @post-param-height) / 2;
+                margin-left: 10px;
+                padding: 0;
+
+                color: @post-param-colour;
+                border: none;
+                border-radius: @post-param-border-radius;
+                outline: none;
+                background-color: @post-param-bg-colour;
+                box-shadow: @post-param-shadow-colour
+                @post-param-shadow-length @post-param-shadow-length 0;
+            }
+
+            input
+            {
+                width: @topic-param-width;
+                height: @post-param-height - 2;
+                padding-left: 10px;
+            }
+
+            button
+            {
+                width: @post-param-width;
+            }
+
+            button.helpbtn {
+                width: @post-param-height;
+                float:right;
+                margin-right: (@header-height - @post-param-height) / 2;
+                font-size: 20px;
+                border-radius: @post-param-height / 2;
+            }
+
+            button#cat-btn {
+                color: @post-param-cat-colour;
+                width: @post-param-cat-width;
+                transition-duration: @post-param-cat-dur;
+            }
+
+            button.postbtn:active
+            {
+                animation-name: fadeOutRight;
+            }
+        }
+    }
+}
+
+div.content
+{
+    position: absolute;
+    z-index: -1; // Right at the back
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    padding-top: @header-height;
+    padding-left: @sidebar-width;
+    margin: @content-margin;
+}
+
+@keyframes reel-down
+{
+    0%
+    {
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        opacity: 0;
+    }
+    100%
+    {
+        height: @modal-height;
+        padding: @modal-padding;
+
+        opacity: 1;
+    }
+}
+
+@keyframes reel-up
+{
+    0%
+    {
+        height: @modal-height;
+        padding: @modal-padding;
+
+        opacity: 1;
+    }
+    80%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        opacity: 0;
+    }
+}
+
+div.modal
+{
+    position: fixed !important;
+    top: @modal-top;
+    right: 0;
+    left: 0;
+
+    width: @modal-width;
+    height: 0;
+    margin: 0 auto;
+    margin-left: @modal-margin-left;
+    padding: @modal-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+    border-radius: @modal-border-rad;
+
+    animation-fill-mode: forwards;
+
+    hr
+    {
+        width: @modal-line-width;
+        margin-top: @modal-line-margin;
+        margin-bottom: @modal-line-margin;
+
+        border: none;
+    }
+
+    textarea
+    {
+        font-family: Montserrat;
+
+        display: block;
+
+        min-width: @textarea-width;
+        max-width: @textarea-width;
+        max-height: @textarea-height;
+        margin: 0 auto;
+        padding-top: @textarea-top-padding;
+        padding-right: @textarea-padding;
+        padding-left: @textarea-padding;
+
+        resize: none;
+
+        border: 1px solid @modal-input-border-colour;
+        border-radius: @textarea-border-rad;
+        outline: none;
+    }
+}
+
+div.modal.up
+{
+    animation-name: reel-up;
+    animation-duration: @modal-reel-time;
+}
+
+div.modal.down
+{
+    animation-name: reel-down;
+    animation-duration: @modal-reel-time;
+}
+
+div.err
+{
+    color: @modal-err-colour;
+    border: @modal-border-width solid @modal-err-border-colour;
+    border-top: none;
+    border-radius: @modal-border-rad;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: @modal-err-bg-colour;
+
+    hr
+    {
+        border-top: 2px solid @modal-err-colour;
+    }
+}
+
+div.input
+{
+    color: @modal-input-colour;
+    border: @modal-border-width solid @modal-input-border-colour;
+    border-top: none;
+    border-radius: @modal-border-rad;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: @modal-input-bg-colour;
+
+    hr
+    {
+        border-top: 2px solid @modal-input-colour;
+    }
+}
+
+h1.modal-heading
+{
+    font-family: Montserrat;
+    font-size: @modal-heading-text-size;
+
+    margin-top: @modal-h1-top-margin;
+
+    text-align: center;
+}
+
+p.modal-p
+{
+    font-family: Montserrat;
+
+    padding-right: @modal-p-padding;
+    padding-left: @modal-p-padding;
+
+    text-align: justify;
+}

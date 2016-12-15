@@ -1,96 +1,60 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cordial</title>
 
-<!--
-     Works well on Chrome, Opera, Firefox, Waterfox and Safari.
-     DOES NOT WORK ON INTERNET EXPLORER AT ALL
- -->
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Montserrat|Raleway" rel="stylesheet">
 
-<html lang="en-UK">
+        <link rel="stylesheet" href="css/reset.css">
 
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-	</script>
+        <link rel="stylesheet" href="css/outs/master.css">
+        <link rel="stylesheet" href="css/outs/card.css">
+        <link rel="stylesheet" href="css/outs/sidebar.css">
 
-	<script type="text/javascript">
-		/*
-		 * This checks if the user is on a mobile device ..
-		 */
-		if (screen.width <= 699) {
-			/*
-			 * .. and redirects them to the mobile page.
-			 */
-			document.location = "mobile.html";
-		}
-	</script>
+        <script type="text/javascript" src="js/modal.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/input.js"></script>
 
-	<title>Cordial</title>
-	<meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body onload="initCards();updateCategoryTo(chosen)">
+        <div class="header">
+            <div class="title">
+                <a href="index.html"><h1>Cordial!</h1></a>
+            </div>
 
-	<link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
-	<link href="css/styles.css" rel="stylesheet">
+            <ul>
+                <li><input id="topic-in" type="text" placeholder="Topic"></li>
+                <li><button type="button" onclick="modalToggle('msg-in-modal');">Message</button></li>
+                <li><button type="button" id="cat-btn" onclick="shiftCategory();">Category</button></li>
+                <li><button id="post-btn" onclick="addCardFromInput();" type="button" class="postbtn">Post!</button></li>
+                <li><button type="button" onclick="location.href='help.html';" id="help-btn" class="helpbtn">?</button></li>
+            </ul>
 
-	<script src="js/main.js"></script>
-	<script src="js/dropdown.js"></script>
-	<script src="js/tooltip.js"></script>
-</head>
+        </div>
 
-<body onload="initTooltip();">
-	<div class="header">
-		<div class="legal">
-			Copyright &copy; 2016 Jacob Garby
-		</div>
+        <div class="sidebar">
+            <ul>
+            <li><button type="button">Profile</button></li>
+                <li><button type="button">Sign out</button></li>
+            </ul>
+        </div>
+        <div class="content">
+        </div>
 
-		<h1 class="header">Cordial</h1>
+        <div id="error-modal" class="modal err">
+            <h1 class="modal-heading">Too many characters!</h1>
+            <hr/>
+            <p class="modal-p">
+                <!-- Put the error message in here from JavaScript -->
+            </p>
+        </div>
 
-		<table>
-			<th><input class="top" id="topic" placeholder="Topic"></th>
-			<th><input class="top msg" id="msg" placeholder="Message"></th>
-			<th>
-				<div class="dropdown">
-					<button id="dropbtn" type="button" onclick="showDrop()" class="top dropbtn">Category</button>
-					<div class="dropdown-content" id="category-drop">
-
-						<button class="cat-type memes" type="button" onclick="setCat('memes')">
-							Memes</button>
-
-						<button class="cat-type funny" type="button" onclick="setCat('funny')">
-							Funny</button>
-
-						<button class="cat-type animals" type="button" onclick="setCat('animals')">
-							Animals</button>
-
-						<button class="cat-type interesting" type="button" onclick="setCat('interesting')">
-							Interesting</button>
-
-						<button class="cat-type conv" type="button" onclick="setCat('conv')">
-							Conversation</button>
-
-						<button class="cat-type programming" type="button" onclick="setCat('programming')">
-							Programming</button>
-
-						<button class="cat-type tech" type="button" onclick="setCat('tech')">
-							Tech</button>
-
-						<button class="cat-type other" type="button" style="color:#5e5e5e;" onclick="setCat('other')">
-							Other</button>
-
-						<button class="cat-type festive" type="button" onclick="setCat('festive')">
-							★ Christmas ★</button>
-
-					</div>
-				</div>
-			</th>
-			<th><button class="top" onclick="cardFromInput()" type="button">Post!</button></th>
-			<th>
-				<div class="tooltip gone" id="tooLong">
-					<p class="tooltipp" id="tooltipContent">Too long!</p>
-				</div>
-			</th>
-		</table>
-	</div>
-
-	<div class="cards">
-	</div>
-</body>
-
+        <div id="msg-in-modal" class="modal input">
+            <h1 class="modal-heading">Type your message!</h1>
+            <hr/>
+            <textarea id="msg-txt" name="msg-in" rows="20" cols="40"></textarea>
+        </div>
+    </body>
 </html>
