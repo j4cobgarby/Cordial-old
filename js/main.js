@@ -1,3 +1,7 @@
+function randomFrom(arr) {
+    return arr[Math.floor(Math.random()*arr.length)]
+}
+
 /*
  * The following two values determine the maximum allowed length for both text
  * inputs which the user has control over.
@@ -51,7 +55,7 @@ var catInds = [
     "other" /* .. to index 7 */
 ]
 
-var chosen = catInds[categoryIndex];
+var chosen = randomFrom(catInds);
 
 var ccols = {/* Categories and their colours will be in here. */};
 /*
@@ -83,6 +87,9 @@ var topicInput,
 function initCards() {
     topicInput = document.getElementById('topic-in');
     msgInput = document.getElementById('msg-txt');
+
+    topicInput.maxLength = maxTitle;
+    msgInput.maxLength = maxMessage;
 }
 
 /*

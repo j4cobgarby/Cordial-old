@@ -1,0 +1,5 @@
+h1.title {
+  display: inline-block !important;
+  left: 200px;
+  width: 200px;
+}

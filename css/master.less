@@ -1,60 +1,6 @@
-// out:master.css, compress:true
+// out: outs/master.css
 
-@maincolour: #6bda83;
-
-@header-height: 60px;
-@sidebar-width: 200px;
-
-@title-size: 30px;
-@title-font: Bowlby One SC;
-@title-shadow-colour: #f2cdd8;
-@title-shadow-length: 3px;
-
-@post-param-height: 40px;
-@post-param-shadow-colour: #a9e9b6;
-@post-param-shadow-length: 3px;
-@post-param-width: 80px;
-@post-param-cat-width: 110px;
-@post-param-cat-colour: #f5f5f5;
-@topic-param-width: 200px;
-@post-param-border-radius: 5px;
-@post-param-bg-colour: #fff;
-@post-param-colour: #888;
-
-@logo-width: 45px;
-
-@content-margin: 10px;
-@content-padding: 10px;
-
-@modal-err-border-colour: darken(@modal-err-bg-colour, 10%);
-@modal-err-bg-colour: #f18282;
-@modal-err-colour: #fff7f7;
-@modal-input-border-colour: darken(@modal-input-bg-colour, 10%);
-@modal-input-bg-colour: lighten(@maincolour, 20%);
-@modal-input-colour: white;
-@modal-category-border-colour: darken(@modal-category-bg-colour, 15%);
-@modal-category-bg-colour: #8dcded;
-@modal-category-colour: white;
-@modal-category-margin-left: @modal-margin-left + 150px;
-@modal-category-width: 200px;
-@modal-height: 200px;
-@modal-width: 400px;
-@modal-top: @header-height;
-@modal-border-width: 1.5px;
-@modal-border-rad: 10px;
-@modal-line-width: @modal-width * .6;
-@modal-line-margin: 15px;
-@modal-padding: 10px;
-@modal-p-padding: 30px;
-@modal-h1-top-margin: 0px;
-@modal-margin-left: @sidebar-width + 70px;
-@modal-reel-time: .2s;
-
-@textarea-width: @modal-width - 30px;
-@textarea-height: 122px;
-@textarea-padding: 10px;
-@textarea-border-rad: 5px;
-@textarea-top-padding: 6px;
+@import "globals";
 
 *
 {
@@ -101,6 +47,7 @@ div.header
 
     div.title
     {
+        text-decoration: none;
         position: fixed;
 
         width: @sidebar-width;
@@ -137,53 +84,77 @@ div.header
                 background-color: darken(@post-param-bg-colour, 4%);
             }
 
-                button:active
-                {
-                    padding: 0; // Otherwise the text gets shifted slightly
+            button:active
+            {
+                padding: 0; // Otherwise the text gets shifted slightly
 
-                    background-color: darken(@post-param-bg-colour, 6%);
-                }
+                background-color: darken(@post-param-bg-colour, 6%);
+            }
 
-                    input,
-                    button
-                    {
-                        font-family: Montserrat;
+            a {
+                text-decoration: none !important;
+            }
 
-                        height: @post-param-height;
-                        margin-top: (@header-height - @post-param-height) / 2;
-                        margin-left: 10px;
-                        padding: 0;
+            h1 {
+                text-decoration: none;
+                font-family: Montserrat;
+                margin-left: 15px;
+                font-size: 30px;
+                padding: 0;
+                display: inline-block;
+                color: white;
+                margin-top: 15px;
+            }
 
-                        color: @post-param-colour;
-                        border: none;
-                        border-radius: @post-param-border-radius;
-                        outline: none;
-                        background-color: @post-param-bg-colour;
-                        box-shadow: @post-param-shadow-colour
-                        @post-param-shadow-length @post-param-shadow-length 0;
-                    }
+            input,
+            button
+            {
+                font-family: Montserrat;
 
-                    input
-                    {
-                        width: @topic-param-width;
-                        height: @post-param-height - 2;
-                        padding-left: 10px;
-                    }
+                height: @post-param-height;
+                margin-top: (@header-height - @post-param-height) / 2;
+                margin-left: 10px;
+                padding: 0;
 
-                    button
-                    {
-                        width: @post-param-width;
-                    }
+                color: @post-param-colour;
+                border: none;
+                border-radius: @post-param-border-radius;
+                outline: none;
+                background-color: @post-param-bg-colour;
+                box-shadow: @post-param-shadow-colour
+                @post-param-shadow-length @post-param-shadow-length 0;
+            }
 
-                    button#cat-btn {
-                        color: @post-param-cat-colour;
-                        width: @post-param-cat-width;
-                    }
+            input
+            {
+                width: @topic-param-width;
+                height: @post-param-height - 2;
+                padding-left: 10px;
+            }
 
-                    button.postbtn:active
-                    {
-                        animation-name: fadeOutRight;
-                    }
+            button
+            {
+                width: @post-param-width;
+            }
+
+            button.helpbtn {
+                width: @post-param-height;
+                float:right;
+                margin-right: (@header-height - @post-param-height) / 2;
+                font-size: 20px;
+                border-radius: @post-param-height / 2;
+            }
+
+            button#cat-btn {
+                color: @post-param-cat-colour;
+                width: @post-param-cat-width;
+                transition-duration: @post-param-cat-dur;
+            }
+
+            button.postbtn:active
+            {
+                animation-name: fadeOutRight;
+            }
         }
     }
 }
@@ -191,7 +162,7 @@ div.header
 div.content
 {
     position: absolute;
-    z-index: -1;
+    z-index: -1; // Right at the back
 
     display: block;
 
@@ -230,7 +201,7 @@ div.content
 
         opacity: 1;
     }
-    50%
+    80%
     {
         opacity: 0;
     }
@@ -300,7 +271,7 @@ div.modal
 div.modal.up
 {
     animation-name: reel-up;
-    animation-duration: @modal-reel-time * 2;
+    animation-duration: @modal-reel-time;
 }
 
 div.modal.down
@@ -344,7 +315,7 @@ div.input
 h1.modal-heading
 {
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: @modal-heading-text-size;
 
     margin-top: @modal-h1-top-margin;
 
@@ -359,15 +330,4 @@ p.modal-p
     padding-left: @modal-p-padding;
 
     text-align: justify;
-}
-
-div.sidebar
-{
-    position: fixed;
-    top: @header-height;
-
-    width: @sidebar-width;
-    height: 100%;
-
-    background-color: lighten(@maincolour, 30%);
 }

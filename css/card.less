@@ -1,9 +1,7 @@
-// out: card.css, compress: true
-
-@import 'master';
+// out: outs/card.css, compress: true
 
 @card-width: 96%;
-@card-height: 300px;
+@card-height: 200px;
 @card-bg-colour: #f7f7f7;
 @card-radius: 6px;
 @card-margin: 10px;
@@ -56,6 +54,8 @@ div.card
         padding: @card-p-padding;
 
         letter-spacing: .2px;
+        text-align: justify;
+        overflow-x: hidden;
 
         color: @card-p-colour;
     }
