@@ -47,7 +47,6 @@ div.header
 
     div.title
     {
-        text-decoration: none;
         position: fixed;
 
         width: @sidebar-width;
@@ -89,10 +88,6 @@ div.header
                 padding: 0; // Otherwise the text gets shifted slightly
 
                 background-color: darken(@post-param-bg-colour, 6%);
-            }
-
-            a {
-                text-decoration: none !important;
             }
 
             h1 {
@@ -137,12 +132,18 @@ div.header
                 width: @post-param-width;
             }
 
-            button.helpbtn {
+            button.homebtn {
                 width: @post-param-height;
                 float:right;
                 margin-right: (@header-height - @post-param-height) / 2;
                 font-size: 20px;
                 border-radius: @post-param-height / 2;
+
+                img {
+                    -webkit-filter: brightness(100%);
+                    margin-top: 3px;
+                    width: 26px;
+                }
             }
 
             button#cat-btn {
@@ -169,7 +170,7 @@ div.content
     width: 100%;
     height: 100%;
     padding-top: @header-height;
-    padding-left: @sidebar-width;
+    //padding-left: @sidebar-width;
     margin: @content-margin;
 }
 

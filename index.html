@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Cordial</title>
 
+        <script src="https://use.fontawesome.com/c8c639dbad.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Montserrat|Raleway" rel="stylesheet">
 
         <link rel="stylesheet" href="css/reset.css">
@@ -19,9 +20,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body onload="initCards();updateCategoryTo(chosen)">
+        <div class="sidebar">
+            <ul>
+            <li><button type="button">Profile</button></li>
+                <li><button type="button">Sign out</button></li>
+            </ul>
+        </div>
         <div class="header">
             <div class="title">
-                <a href="index.html"><h1>Cordial!</h1></a>
+                <h1>Cordial!</h1>
             </div>
 
             <ul>
@@ -29,16 +36,9 @@
                 <li><button type="button" onclick="modalToggle('msg-in-modal');">Message</button></li>
                 <li><button type="button" id="cat-btn" onclick="shiftCategory();">Category</button></li>
                 <li><button id="post-btn" onclick="addCardFromInput();" type="button" class="postbtn">Post!</button></li>
-                <li><button type="button" onclick="location.href='help.html';" id="help-btn" class="helpbtn">?</button></li>
+                <li><button type="button" class="homebtn"><img src="images/logo.png" alt=""></button></li>
             </ul>
 
-        </div>
-
-        <div class="sidebar">
-            <ul>
-            <li><button type="button">Profile</button></li>
-                <li><button type="button">Sign out</button></li>
-            </ul>
         </div>
         <div class="content">
         </div>
